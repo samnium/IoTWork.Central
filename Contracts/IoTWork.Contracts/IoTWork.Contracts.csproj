@@ -44,6 +44,7 @@
     <Compile Include="IIoTPipe.cs" />
     <Compile Include="IIoTSample.cs" />
     <Compile Include="IIoTSensor.cs" />
+    <Compile Include="IIoTWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
