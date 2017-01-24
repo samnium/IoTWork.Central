@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/System" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8088/ManagementService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
+  <xs:complexType name="ArrayOfTupleOfintintintIPEndPointzIC_PLepD">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TupleOfintintintIPEndPointzIC_PLepD" nillable="true" type="tns:TupleOfintintintIPEndPointzIC_PLepD" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTupleOfintintintIPEndPointzIC_PLepD" nillable="true" type="tns:ArrayOfTupleOfintintintIPEndPointzIC_PLepD" />
+  <xs:complexType name="TupleOfintintintIPEndPointzIC_PLepD">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="TupleOf{0}{1}{2}{3}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="int" Namespace="http://www.w3.org/2001/XMLSchema" />
+          <GenericParameter Name="int" Namespace="http://www.w3.org/2001/XMLSchema" />
+          <GenericParameter Name="int" Namespace="http://www.w3.org/2001/XMLSchema" />
+          <GenericParameter Name="IPEndPoint" Namespace="http://schemas.datacontract.org/2004/07/System.Net" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="m_Item1" type="xs:int" />
+      <xs:element name="m_Item2" type="xs:int" />
+      <xs:element name="m_Item3" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Net" name="m_Item4" nillable="true" type="q1:IPEndPoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TupleOfintintintIPEndPointzIC_PLepD" nillable="true" type="tns:TupleOfintintintIPEndPointzIC_PLepD" />
+  <xs:complexType name="ArrayOfTupleOfintintIPEndPoint_SdSGtUWK">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TupleOfintintIPEndPoint_SdSGtUWK" nillable="true" type="tns:TupleOfintintIPEndPoint_SdSGtUWK" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTupleOfintintIPEndPoint_SdSGtUWK" nillable="true" type="tns:ArrayOfTupleOfintintIPEndPoint_SdSGtUWK" />
+  <xs:complexType name="TupleOfintintIPEndPoint_SdSGtUWK">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="TupleOf{0}{1}{2}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="int" Namespace="http://www.w3.org/2001/XMLSchema" />
+          <GenericParameter Name="int" Namespace="http://www.w3.org/2001/XMLSchema" />
+          <GenericParameter Name="IPEndPoint" Namespace="http://schemas.datacontract.org/2004/07/System.Net" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="m_Item1" type="xs:int" />
+      <xs:element name="m_Item2" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.Net" name="m_Item3" nillable="true" type="q2:IPEndPoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TupleOfintintIPEndPoint_SdSGtUWK" nillable="true" type="tns:TupleOfintintIPEndPoint_SdSGtUWK" />
+</xs:schema>

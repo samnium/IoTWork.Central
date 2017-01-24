@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://iotwork.iotnetwork/commands" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://iotwork.iotnetwork/commands" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://iotwork.iotnetwork/commands/Imports">
+      <xsd:import schemaLocation="http://localhost:8088/ManagementService.svc?xsd=xsd0" namespace="http://iotwork.iotnetwork/commands" />
+      <xsd:import schemaLocation="http://localhost:8088/ManagementService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8088/ManagementService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://localhost:8088/ManagementService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Net" />
+      <xsd:import schemaLocation="http://localhost:8088/ManagementService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Net.Sockets" />
+      <xsd:import schemaLocation="http://localhost:8088/ManagementService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:8088/ManagementService.svc?xsd=xsd6" namespace="http://iotwork.protocol/device" />
+      <xsd:import schemaLocation="http://localhost:8088/ManagementService.svc?xsd=xsd7" namespace="http://iotwork.protocol/types" />
+      <xsd:import schemaLocation="http://localhost:8088/ManagementService.svc?xsd=xsd8" namespace="http://iotwork.protocol/data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="INetworkManagementInterface_PickerStop_InputMessage">
+    <wsdl:part name="parameters" element="tns:PickerStop" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_PickerStop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PickerStopResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_PickerRestart_InputMessage">
+    <wsdl:part name="parameters" element="tns:PickerRestart" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_PickerRestart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PickerRestartResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_PickerStart_InputMessage">
+    <wsdl:part name="parameters" element="tns:PickerStart" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_PickerStart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PickerStartResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_PickerConfigureAndRestart_InputMessage">
+    <wsdl:part name="parameters" element="tns:PickerConfigureAndRestart" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_PickerConfigureAndRestart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PickerConfigureAndRestartResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceConfigureAndRestart_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceConfigureAndRestart" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceConfigureAndRestart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceConfigureAndRestartResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceRestoreFactory_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceRestoreFactory" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceRestoreFactory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceRestoreFactoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceRestoreFactoryAndRestartDevice_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceRestoreFactoryAndRestartDevice" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceRestoreFactoryAndRestartDevice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceRestoreFactoryAndRestartDeviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceRestartDevice_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceRestartDevice" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceRestartDevice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceRestartDeviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceRestartApplication_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceRestartApplication" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceRestartApplication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceRestartApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceStopAcquire_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceStopAcquire" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceStopAcquire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceStopAcquireResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceRestartAcquire_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceRestartAcquire" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceRestartAcquire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceRestartAcquireResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceAskForStatistics_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceAskForStatistics" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceAskForStatistics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceAskForStatisticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceAskForErrors_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceAskForErrors" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceAskForErrors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceAskForErrorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceAskForAlive_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceAskForAlive" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceAskForAlive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceAskForAliveResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceAskForUpTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceAskForUpTime" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceAskForUpTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceAskForUpTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceListOfDllFilesForSensors_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceListOfDllFilesForSensors" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceListOfDllFilesForSensors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceListOfDllFilesForSensorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceListOfDllFilesForPipes_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceListOfDllFilesForPipes" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceListOfDllFilesForPipes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceListOfDllFilesForPipesResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceUploadRequestForDllFileForSensor_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceUploadRequestForDllFileForSensor" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceUploadRequestForDllFileForSensor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceUploadRequestForDllFileForSensorResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceUploadRequestForDllFileForPipe_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceUploadRequestForDllFileForPipe" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceUploadRequestForDllFileForPipe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceUploadRequestForDllFileForPipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceUploadConfigurationDeviceFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceUploadConfigurationDeviceFile" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceUploadConfigurationDeviceFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceUploadConfigurationDeviceFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceUploadConfigurationLogFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceUploadConfigurationLogFile" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_DeviceUploadConfigurationLogFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeviceUploadConfigurationLogFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_RegisteredDevices_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisteredDevices" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_RegisteredDevices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisteredDevicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_RegisteredPickers_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisteredPickers" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_RegisteredPickers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisteredPickersResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_GetDeviceStatistics_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceStatistics" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_GetDeviceStatistics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceStatisticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_GetDeviceErrors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceErrors" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_GetDeviceErrors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceErrorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_GetPickerStatistics_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPickerStatistics" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_GetPickerStatistics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPickerStatisticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_GetPickerErrors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPickerErrors" />
+  </wsdl:message>
+  <wsdl:message name="INetworkManagementInterface_GetPickerErrors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPickerErrorsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="INetworkManagementInterface">
+    <wsdl:operation name="PickerStop">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkPickerService/PickerStop" message="tns:INetworkManagementInterface_PickerStop_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkPickerService/PickerStopResponse" message="tns:INetworkManagementInterface_PickerStop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PickerRestart">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkPickerService/PickerRestart" message="tns:INetworkManagementInterface_PickerRestart_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkPickerService/PickerRestartResponse" message="tns:INetworkManagementInterface_PickerRestart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PickerStart">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkPickerService/PickerStart" message="tns:INetworkManagementInterface_PickerStart_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkPickerService/PickerStartResponse" message="tns:INetworkManagementInterface_PickerStart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PickerConfigureAndRestart">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkPickerService/PickerConfigureAndRestart" message="tns:INetworkManagementInterface_PickerConfigureAndRestart_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkPickerService/PickerConfigureAndRestartResponse" message="tns:INetworkManagementInterface_PickerConfigureAndRestart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceConfigureAndRestart">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceService/DeviceConfigureAndRestart" message="tns:INetworkManagementInterface_DeviceConfigureAndRestart_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceService/DeviceConfigureAndRestartResponse" message="tns:INetworkManagementInterface_DeviceConfigureAndRestart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceRestoreFactory">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceService/DeviceRestoreFactory" message="tns:INetworkManagementInterface_DeviceRestoreFactory_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceService/DeviceRestoreFactoryResponse" message="tns:INetworkManagementInterface_DeviceRestoreFactory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceRestoreFactoryAndRestartDevice">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceService/DeviceRestoreFactoryAndRestartDevice" message="tns:INetworkManagementInterface_DeviceRestoreFactoryAndRestartDevice_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceService/DeviceRestoreFactoryAndRestartDeviceResponse" message="tns:INetworkManagementInterface_DeviceRestoreFactoryAndRestartDevice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceRestartDevice">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceService/DeviceRestartDevice" message="tns:INetworkManagementInterface_DeviceRestartDevice_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceService/DeviceRestartDeviceResponse" message="tns:INetworkManagementInterface_DeviceRestartDevice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceRestartApplication">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceService/DeviceRestartApplication" message="tns:INetworkManagementInterface_DeviceRestartApplication_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceService/DeviceRestartApplicationResponse" message="tns:INetworkManagementInterface_DeviceRestartApplication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceStopAcquire">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceService/DeviceStopAcquire" message="tns:INetworkManagementInterface_DeviceStopAcquire_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceService/DeviceStopAcquireResponse" message="tns:INetworkManagementInterface_DeviceStopAcquire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceRestartAcquire">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceService/DeviceRestartAcquire" message="tns:INetworkManagementInterface_DeviceRestartAcquire_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceService/DeviceRestartAcquireResponse" message="tns:INetworkManagementInterface_DeviceRestartAcquire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceAskForStatistics">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceQueryService/DeviceAskForStatistics" message="tns:INetworkManagementInterface_DeviceAskForStatistics_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceQueryService/DeviceAskForStatisticsResponse" message="tns:INetworkManagementInterface_DeviceAskForStatistics_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceAskForErrors">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceQueryService/DeviceAskForErrors" message="tns:INetworkManagementInterface_DeviceAskForErrors_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceQueryService/DeviceAskForErrorsResponse" message="tns:INetworkManagementInterface_DeviceAskForErrors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceAskForAlive">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceQueryService/DeviceAskForAlive" message="tns:INetworkManagementInterface_DeviceAskForAlive_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceQueryService/DeviceAskForAliveResponse" message="tns:INetworkManagementInterface_DeviceAskForAlive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceAskForUpTime">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceQueryService/DeviceAskForUpTime" message="tns:INetworkManagementInterface_DeviceAskForUpTime_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceQueryService/DeviceAskForUpTimeResponse" message="tns:INetworkManagementInterface_DeviceAskForUpTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceListOfDllFilesForSensors">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceNavigationService/DeviceListOfDllFilesForSensors" message="tns:INetworkManagementInterface_DeviceListOfDllFilesForSensors_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceNavigationService/DeviceListOfDllFilesForSensorsResponse" message="tns:INetworkManagementInterface_DeviceListOfDllFilesForSensors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceListOfDllFilesForPipes">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceNavigationService/DeviceListOfDllFilesForPipes" message="tns:INetworkManagementInterface_DeviceListOfDllFilesForPipes_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceNavigationService/DeviceListOfDllFilesForPipesResponse" message="tns:INetworkManagementInterface_DeviceListOfDllFilesForPipes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceUploadRequestForDllFileForSensor">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceTransferService/DeviceUploadRequestForDllFileForSensor" message="tns:INetworkManagementInterface_DeviceUploadRequestForDllFileForSensor_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceTransferService/DeviceUploadRequestForDllFileForSensorResponse" message="tns:INetworkManagementInterface_DeviceUploadRequestForDllFileForSensor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceUploadRequestForDllFileForPipe">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceTransferService/DeviceUploadRequestForDllFileForPipe" message="tns:INetworkManagementInterface_DeviceUploadRequestForDllFileForPipe_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceTransferService/DeviceUploadRequestForDllFileForPipeResponse" message="tns:INetworkManagementInterface_DeviceUploadRequestForDllFileForPipe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceUploadConfigurationDeviceFile">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceTransferService/DeviceUploadConfigurationDeviceFile" message="tns:INetworkManagementInterface_DeviceUploadConfigurationDeviceFile_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceTransferService/DeviceUploadConfigurationDeviceFileResponse" message="tns:INetworkManagementInterface_DeviceUploadConfigurationDeviceFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceUploadConfigurationLogFile">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceTransferService/DeviceUploadConfigurationLogFile" message="tns:INetworkManagementInterface_DeviceUploadConfigurationLogFile_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkDeviceTransferService/DeviceUploadConfigurationLogFileResponse" message="tns:INetworkManagementInterface_DeviceUploadConfigurationLogFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisteredDevices">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkCacheService/RegisteredDevices" message="tns:INetworkManagementInterface_RegisteredDevices_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkCacheService/RegisteredDevicesResponse" message="tns:INetworkManagementInterface_RegisteredDevices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisteredPickers">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkCacheService/RegisteredPickers" message="tns:INetworkManagementInterface_RegisteredPickers_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkCacheService/RegisteredPickersResponse" message="tns:INetworkManagementInterface_RegisteredPickers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceStatistics">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkCacheService/GetDeviceStatistics" message="tns:INetworkManagementInterface_GetDeviceStatistics_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkCacheService/GetDeviceStatisticsResponse" message="tns:INetworkManagementInterface_GetDeviceStatistics_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceErrors">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkCacheService/GetDeviceErrors" message="tns:INetworkManagementInterface_GetDeviceErrors_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkCacheService/GetDeviceErrorsResponse" message="tns:INetworkManagementInterface_GetDeviceErrors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPickerStatistics">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkCacheService/GetPickerStatistics" message="tns:INetworkManagementInterface_GetPickerStatistics_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkCacheService/GetPickerStatisticsResponse" message="tns:INetworkManagementInterface_GetPickerStatistics_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPickerErrors">
+      <wsdl:input wsam:Action="http://iotwork.iotnetwork/commands/INetworkCacheService/GetPickerErrors" message="tns:INetworkManagementInterface_GetPickerErrors_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotnetwork/commands/INetworkCacheService/GetPickerErrorsResponse" message="tns:INetworkManagementInterface_GetPickerErrors_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://iotwork.protocol/types" elementFormDefault="qualified" targetNamespace="http://iotwork.protocol/types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Payload">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="Payload" nillable="true" type="tns:Payload" />
+</xs:schema>

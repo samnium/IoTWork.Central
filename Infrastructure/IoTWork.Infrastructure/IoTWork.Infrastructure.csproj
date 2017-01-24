@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{16BCBAB4-60B3-4ABD-B8AF-50D0199449AE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IoTWork.Infrastructure</RootNamespace>
+    <AssemblyName>IoTWork.Infrastructure</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Caching\ICacheDirectory.cs" />
+    <Compile Include="Caching\ICacheManager.cs" />
+    <Compile Include="Caching\MemoryCacheManager.cs" />
+    <Compile Include="Compressors\GZipCompressor.cs" />
+    <Compile Include="Compressors\VoidCompressor.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Formatters\BinaryFormatter.cs" />
+    <Compile Include="Formatters\JSonFormatter.cs" />
+    <Compile Include="Formatters\VoidFormatter.cs" />
+    <Compile Include="Formatters\XmlFormatter.cs" />
+    <Compile Include="Helpers\SerializerHelper.cs" />
+    <Compile Include="Interfaces\IPickerManagementInterface.cs" />
+    <Compile Include="Interfaces\INetworkManagementInterface.cs" />
+    <Compile Include="Management\ExceptionContainer.cs" />
+    <Compile Include="Management\Journal.cs" />
+    <Compile Include="Networking\FtpManager.cs" />
+    <Compile Include="Helpers\IoTWorkHelper.cs" />
+    <Compile Include="Interfaces\IDeviceManagementInterface.cs" />
+    <Compile Include="Interfaces\ICompressor.cs" />
+    <Compile Include="Interfaces\IFormatter.cs" />
+    <Compile Include="Interfaces\IPacketManagerInput.cs" />
+    <Compile Include="Interfaces\IPacketManagerOutput.cs" />
+    <Compile Include="Interfaces\ISigner.cs" />
+    <Compile Include="IPC\WcfPipe\IPipeService.cs" />
+    <Compile Include="IPC\WcfPipe\PipeService.cs" />
+    <Compile Include="IPC\WcfPipe\Receiver.cs" />
+    <Compile Include="IPC\WcfPipe\Sender.cs" />
+    <Compile Include="Logging\LogFormat.cs" />
+    <Compile Include="Logging\LogManager.cs" />
+    <Compile Include="Networking\PacketManagerInput.cs" />
+    <Compile Include="Networking\PacketManagerOutput.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protocol\ExtendedHeader.cs" />
+    <Compile Include="Protocol\ExtendedPayload.cs" />
+    <Compile Include="Signer\KeyManager.cs" />
+    <Compile Include="Signer\VoidSigner.cs" />
+    <Compile Include="Statistics\ErrorInfo.cs" />
+    <Compile Include="Statistics\Statistics.cs" />
+    <Compile Include="Types\IoTPickerCommandName.cs" />
+    <Compile Include="Types\IoTNetworkUri.cs" />
+    <Compile Include="Types\IoTPickerMessageName.cs" />
+    <Compile Include="Types\IoTReaderCommand.cs" />
+    <Compile Include="Types\IoTNetworkCommandName.cs" />
+    <Compile Include="Types\IoTReaderCommandName.cs" />
+    <Compile Include="Management\WindowsController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IoTWork.Protocol\IoTWork.Protocol.csproj">
+      <Project>{F30EB521-BD01-4AB4-AEEF-B650042BB2B9}</Project>
+      <Name>IoTWork.Protocol</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>mkdir $(SolutionDir)\..\Drop\
+mkdir $(SolutionDir)\..\Drop\Infrastructure\
+xcopy "$(ProjectDir)$(OutDir)IoTWork.Infrastructure.*" "$(SolutionDir)..\Drop\Infrastructure" /Y /I /R
+exit 0</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:i0="http://iotwork.iotnetwork/commands" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ManagementService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://iotwork.iotnetwork/commands" location="http://localhost:8088/ManagementService.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_INetworkManagementInterface" type="i0:INetworkManagementInterface">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PickerStop">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkPickerService/PickerStop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PickerRestart">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkPickerService/PickerRestart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PickerStart">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkPickerService/PickerStart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PickerConfigureAndRestart">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkPickerService/PickerConfigureAndRestart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceConfigureAndRestart">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkDeviceService/DeviceConfigureAndRestart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceRestoreFactory">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkDeviceService/DeviceRestoreFactory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceRestoreFactoryAndRestartDevice">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkDeviceService/DeviceRestoreFactoryAndRestartDevice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceRestartDevice">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkDeviceService/DeviceRestartDevice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceRestartApplication">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkDeviceService/DeviceRestartApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceStopAcquire">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkDeviceService/DeviceStopAcquire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceRestartAcquire">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkDeviceService/DeviceRestartAcquire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceAskForStatistics">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkDeviceQueryService/DeviceAskForStatistics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceAskForErrors">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkDeviceQueryService/DeviceAskForErrors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceAskForAlive">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkDeviceQueryService/DeviceAskForAlive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceAskForUpTime">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkDeviceQueryService/DeviceAskForUpTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceListOfDllFilesForSensors">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkDeviceNavigationService/DeviceListOfDllFilesForSensors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceListOfDllFilesForPipes">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkDeviceNavigationService/DeviceListOfDllFilesForPipes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceUploadRequestForDllFileForSensor">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkDeviceTransferService/DeviceUploadRequestForDllFileForSensor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceUploadRequestForDllFileForPipe">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkDeviceTransferService/DeviceUploadRequestForDllFileForPipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceUploadConfigurationDeviceFile">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkDeviceTransferService/DeviceUploadConfigurationDeviceFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceUploadConfigurationLogFile">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkDeviceTransferService/DeviceUploadConfigurationLogFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisteredDevices">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkCacheService/RegisteredDevices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisteredPickers">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkCacheService/RegisteredPickers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceStatistics">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkCacheService/GetDeviceStatistics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceErrors">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkCacheService/GetDeviceErrors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPickerStatistics">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkCacheService/GetPickerStatistics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPickerErrors">
+      <soap:operation soapAction="http://iotwork.iotnetwork/commands/INetworkCacheService/GetPickerErrors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ManagementService">
+    <wsdl:port name="BasicHttpBinding_INetworkManagementInterface" binding="tns:BasicHttpBinding_INetworkManagementInterface">
+      <soap:address location="http://localhost:8088/ManagementService.svc/Hosting" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

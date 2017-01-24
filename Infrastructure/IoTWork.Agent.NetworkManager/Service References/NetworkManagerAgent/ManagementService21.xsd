@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://iotwork.protocol/device" elementFormDefault="qualified" targetNamespace="http://iotwork.protocol/device" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8088/ManagementService.svc?xsd=xsd7" namespace="http://iotwork.protocol/types" />
+  <xs:import schemaLocation="http://localhost:8088/ManagementService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfNote">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Note" nillable="true" type="tns:Note" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNote" nillable="true" type="tns:ArrayOfNote" />
+  <xs:complexType name="Note">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://iotwork.protocol/types" base="q1:Payload">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="COD" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DMN" type="tns:NoteDomain" />
+          <xs:element minOccurs="0" name="WHN" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="KEY" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VAL" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Note" nillable="true" type="tns:Note" />
+  <xs:complexType name="Alive">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://iotwork.protocol/types" base="q2:Payload">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UTM" type="ser:duration" />
+          <xs:element minOccurs="0" name="STA" type="tns:AcquireStatus" />
+          <xs:element minOccurs="0" name="NOT" nillable="true" type="tns:ArrayOfNote" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Alive" nillable="true" type="tns:Alive" />
+  <xs:simpleType name="AcquireStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Acquiring" />
+      <xs:enumeration value="Stopped" />
+      <xs:enumeration value="Paused" />
+      <xs:enumeration value="Faulted" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AcquireStatus" nillable="true" type="tns:AcquireStatus" />
+  <xs:complexType name="ManagerStarted">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://iotwork.protocol/types" base="q3:Payload">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SAT" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ManagerStarted" nillable="true" type="tns:ManagerStarted" />
+  <xs:complexType name="ManagerStopped">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://iotwork.protocol/types" base="q4:Payload">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UPT" type="ser:duration" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ManagerStopped" nillable="true" type="tns:ManagerStopped" />
+  <xs:complexType name="Statistics">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://iotwork.protocol/types" base="q5:Payload">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NOT" nillable="true" type="tns:ArrayOfNote" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Statistics" nillable="true" type="tns:Statistics" />
+  <xs:complexType name="Errors">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://iotwork.protocol/types" base="q6:Payload">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NOT" nillable="true" type="tns:ArrayOfNote" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Errors" nillable="true" type="tns:Errors" />
+  <xs:simpleType name="NoteDomain">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="System" />
+      <xs:enumeration value="Network" />
+      <xs:enumeration value="Chain" />
+      <xs:enumeration value="Sensor" />
+      <xs:enumeration value="Error" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="NoteDomain" nillable="true" type="tns:NoteDomain" />
+</xs:schema>

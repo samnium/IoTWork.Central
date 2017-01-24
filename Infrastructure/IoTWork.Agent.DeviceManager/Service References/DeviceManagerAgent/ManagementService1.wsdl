@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:i0="http://iotwork.iotreader/commands" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ManagementService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://iotwork.iotreader/commands" location="http://localhost:8089/ManagementService.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_IDeviceManagementInterface" type="i0:IDeviceManagementInterface">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RestoreFactory">
+      <soap:operation soapAction="http://iotwork.iotreader/commands/IDeviceService/RestoreFactory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestoreFactoryAndRestartDevice">
+      <soap:operation soapAction="http://iotwork.iotreader/commands/IDeviceService/RestoreFactoryAndRestartDevice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestartDevice">
+      <soap:operation soapAction="http://iotwork.iotreader/commands/IDeviceService/RestartDevice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestartApplication">
+      <soap:operation soapAction="http://iotwork.iotreader/commands/IDeviceService/RestartApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopAcquire">
+      <soap:operation soapAction="http://iotwork.iotreader/commands/IDeviceService/StopAcquire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestartAcquire">
+      <soap:operation soapAction="http://iotwork.iotreader/commands/IDeviceService/RestartAcquire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AskForStatistics">
+      <soap:operation soapAction="http://iotwork.iotreader/commands/IQueryService/AskForStatistics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AskForErrors">
+      <soap:operation soapAction="http://iotwork.iotreader/commands/IQueryService/AskForErrors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AskForAlive">
+      <soap:operation soapAction="http://iotwork.iotreader/commands/IQueryService/AskForAlive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AskForUpTime">
+      <soap:operation soapAction="http://iotwork.iotreader/commands/IQueryService/AskForUpTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListOfDllFilesForSensors">
+      <soap:operation soapAction="http://iotwork.iotreader/commands/INavigationService/ListOfDllFilesForSensors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListOfDllFilesForPipes">
+      <soap:operation soapAction="http://iotwork.iotreader/commands/INavigationService/ListOfDllFilesForPipes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadRequestForDllFileForSensor">
+      <soap:operation soapAction="http://iotwork.iotreader/commands/ITransferService/UploadRequestForDllFileForSensor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadRequestForDllFileForPipe">
+      <soap:operation soapAction="http://iotwork.iotreader/commands/ITransferService/UploadRequestForDllFileForPipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadConfigurationDeviceFile">
+      <soap:operation soapAction="http://iotwork.iotreader/commands/ITransferService/UploadConfigurationDeviceFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadConfigurationLogFile">
+      <soap:operation soapAction="http://iotwork.iotreader/commands/ITransferService/UploadConfigurationLogFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ManagementService">
+    <wsdl:port name="BasicHttpBinding_IDeviceManagementInterface" binding="tns:BasicHttpBinding_IDeviceManagementInterface">
+      <soap:address location="http://localhost:8089/ManagementService.svc/Hosting" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

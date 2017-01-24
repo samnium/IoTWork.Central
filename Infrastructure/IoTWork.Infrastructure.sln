@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTWork.Agent.DeviceManager", "IoTWork.Agent.DeviceManager\IoTWork.Agent.DeviceManager.csproj", "{A4666DB5-95F7-4E80-A2A5-1319E53EF3CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTWork.Agent.NetworkManager", "IoTWork.Agent.NetworkManager\IoTWork.Agent.NetworkManager.csproj", "{F564F236-1045-4F73-BA28-2EA96266627A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTWork.Agent.PickerManager", "IoTWork.Agent.PickerManager\IoTWork.Agent.PickerManager.csproj", "{7298DB7E-2C79-41F0-A50D-B75F56DAA3CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTWork.Communication", "IoTWork.Communication\IoTWork.Communication.csproj", "{CB5D8997-96B2-4077-907A-5ECE11F05717}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTWork.Infrastructure", "IoTWork.Infrastructure\IoTWork.Infrastructure.csproj", "{16BCBAB4-60B3-4ABD-B8AF-50D0199449AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTWork.Management", "IoTWork.Management\IoTWork.Management.csproj", "{8DA85EDA-6094-4F8D-991D-A50020AB8FA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTWork.Protocol", "IoTWork.Protocol\IoTWork.Protocol.csproj", "{F30EB521-BD01-4AB4-AEEF-B650042BB2B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTWork.Queues", "IoTWork.Queues\IoTWork.Queues.csproj", "{7E5181DE-6E93-4216-BED2-8B8B1FD49410}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTWork.XML", "IoTWork.XML\IoTWork.XML.csproj", "{9124E40A-7A27-4A03-8BCE-9304CEA07CD7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A4666DB5-95F7-4E80-A2A5-1319E53EF3CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4666DB5-95F7-4E80-A2A5-1319E53EF3CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4666DB5-95F7-4E80-A2A5-1319E53EF3CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4666DB5-95F7-4E80-A2A5-1319E53EF3CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F564F236-1045-4F73-BA28-2EA96266627A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F564F236-1045-4F73-BA28-2EA96266627A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F564F236-1045-4F73-BA28-2EA96266627A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F564F236-1045-4F73-BA28-2EA96266627A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7298DB7E-2C79-41F0-A50D-B75F56DAA3CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7298DB7E-2C79-41F0-A50D-B75F56DAA3CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7298DB7E-2C79-41F0-A50D-B75F56DAA3CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7298DB7E-2C79-41F0-A50D-B75F56DAA3CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB5D8997-96B2-4077-907A-5ECE11F05717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB5D8997-96B2-4077-907A-5ECE11F05717}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB5D8997-96B2-4077-907A-5ECE11F05717}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB5D8997-96B2-4077-907A-5ECE11F05717}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16BCBAB4-60B3-4ABD-B8AF-50D0199449AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16BCBAB4-60B3-4ABD-B8AF-50D0199449AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16BCBAB4-60B3-4ABD-B8AF-50D0199449AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16BCBAB4-60B3-4ABD-B8AF-50D0199449AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DA85EDA-6094-4F8D-991D-A50020AB8FA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DA85EDA-6094-4F8D-991D-A50020AB8FA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DA85EDA-6094-4F8D-991D-A50020AB8FA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DA85EDA-6094-4F8D-991D-A50020AB8FA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F30EB521-BD01-4AB4-AEEF-B650042BB2B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F30EB521-BD01-4AB4-AEEF-B650042BB2B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F30EB521-BD01-4AB4-AEEF-B650042BB2B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F30EB521-BD01-4AB4-AEEF-B650042BB2B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E5181DE-6E93-4216-BED2-8B8B1FD49410}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E5181DE-6E93-4216-BED2-8B8B1FD49410}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E5181DE-6E93-4216-BED2-8B8B1FD49410}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E5181DE-6E93-4216-BED2-8B8B1FD49410}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9124E40A-7A27-4A03-8BCE-9304CEA07CD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9124E40A-7A27-4A03-8BCE-9304CEA07CD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9124E40A-7A27-4A03-8BCE-9304CEA07CD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9124E40A-7A27-4A03-8BCE-9304CEA07CD7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

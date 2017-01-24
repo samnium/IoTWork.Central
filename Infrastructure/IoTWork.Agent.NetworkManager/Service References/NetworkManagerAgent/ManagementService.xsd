@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://iotwork.iotnetwork/commands" elementFormDefault="qualified" targetNamespace="http://iotwork.iotnetwork/commands" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8088/ManagementService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="http://localhost:8088/ManagementService.svc?xsd=xsd6" namespace="http://iotwork.protocol/device" />
+  <xs:element name="PickerStop">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PickerStopResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PickerRestart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PickerRestartResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PickerStart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PickerStartResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PickerConfigureAndRestart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PickerConfigureAndRestartResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceConfigureAndRestart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="DeviceOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceConfigureAndRestartResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceRestoreFactory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="DeviceOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceRestoreFactoryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceRestoreFactoryAndRestartDevice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="DeviceOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceRestoreFactoryAndRestartDeviceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceRestartDevice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="DeviceOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceRestartDeviceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceRestartApplication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="DeviceOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceRestartApplicationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceStopAcquire">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="DeviceOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceStopAcquireResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceRestartAcquire">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="DeviceOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceRestartAcquireResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceAskForStatistics">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="DeviceOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceAskForStatisticsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceAskForErrors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="DeviceOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceAskForErrorsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceAskForAlive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="DeviceOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceAskForAliveResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceAskForUpTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="DeviceOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceAskForUpTimeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceListOfDllFilesForSensors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="DeviceOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceListOfDllFilesForSensorsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceListOfDllFilesForPipes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="DeviceOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceListOfDllFilesForPipesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceUploadRequestForDllFileForSensor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="DeviceOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceUploadRequestForDllFileForSensorResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceUploadRequestForDllFileForPipe">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="DeviceOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceUploadRequestForDllFileForPipeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceUploadConfigurationDeviceFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="DeviceOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceUploadConfigurationDeviceFileResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceUploadConfigurationLogFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="DeviceOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeviceUploadConfigurationLogFileResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisteredDevices">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisteredDevicesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="RegisteredDevicesResult" nillable="true" type="q1:ArrayOfTupleOfintintintIPEndPointzIC_PLepD" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisteredPickers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisteredPickersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="RegisteredPickersResult" nillable="true" type="q2:ArrayOfTupleOfintintIPEndPoint_SdSGtUWK" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceStatistics">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="DeviceOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceStatisticsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://iotwork.protocol/device" minOccurs="0" name="GetDeviceStatisticsResult" nillable="true" type="q3:ArrayOfNote" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceErrors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="DeviceOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceErrorsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://iotwork.protocol/device" minOccurs="0" name="GetDeviceErrorsResult" nillable="true" type="q4:ArrayOfNote" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPickerStatistics">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPickerStatisticsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://iotwork.protocol/device" minOccurs="0" name="GetPickerStatisticsResult" nillable="true" type="q5:ArrayOfNote" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPickerErrors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NetworkOrdinal" type="xs:int" />
+        <xs:element minOccurs="0" name="RegionOrdinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPickerErrorsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://iotwork.protocol/device" minOccurs="0" name="GetPickerErrorsResult" nillable="true" type="q6:ArrayOfNote" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

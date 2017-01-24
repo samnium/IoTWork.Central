@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://iotwork.iotreader/commands" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://iotwork.iotreader/commands" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://iotwork.iotreader/commands/Imports">
+      <xsd:import schemaLocation="http://localhost:8089/ManagementService.svc?xsd=xsd0" namespace="http://iotwork.iotreader/commands" />
+      <xsd:import schemaLocation="http://localhost:8089/ManagementService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8089/ManagementService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDeviceManagementInterface_RestoreFactory_InputMessage">
+    <wsdl:part name="parameters" element="tns:RestoreFactory" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_RestoreFactory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RestoreFactoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_RestoreFactoryAndRestartDevice_InputMessage">
+    <wsdl:part name="parameters" element="tns:RestoreFactoryAndRestartDevice" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_RestoreFactoryAndRestartDevice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RestoreFactoryAndRestartDeviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_RestartDevice_InputMessage">
+    <wsdl:part name="parameters" element="tns:RestartDevice" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_RestartDevice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RestartDeviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_RestartApplication_InputMessage">
+    <wsdl:part name="parameters" element="tns:RestartApplication" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_RestartApplication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RestartApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_StopAcquire_InputMessage">
+    <wsdl:part name="parameters" element="tns:StopAcquire" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_StopAcquire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StopAcquireResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_RestartAcquire_InputMessage">
+    <wsdl:part name="parameters" element="tns:RestartAcquire" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_RestartAcquire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RestartAcquireResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_AskForStatistics_InputMessage">
+    <wsdl:part name="parameters" element="tns:AskForStatistics" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_AskForStatistics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AskForStatisticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_AskForErrors_InputMessage">
+    <wsdl:part name="parameters" element="tns:AskForErrors" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_AskForErrors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AskForErrorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_AskForAlive_InputMessage">
+    <wsdl:part name="parameters" element="tns:AskForAlive" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_AskForAlive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AskForAliveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_AskForUpTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:AskForUpTime" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_AskForUpTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AskForUpTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_ListOfDllFilesForSensors_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListOfDllFilesForSensors" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_ListOfDllFilesForSensors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListOfDllFilesForSensorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_ListOfDllFilesForPipes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListOfDllFilesForPipes" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_ListOfDllFilesForPipes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListOfDllFilesForPipesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_UploadRequestForDllFileForSensor_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadRequestForDllFileForSensor" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_UploadRequestForDllFileForSensor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadRequestForDllFileForSensorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_UploadRequestForDllFileForPipe_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadRequestForDllFileForPipe" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_UploadRequestForDllFileForPipe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadRequestForDllFileForPipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_UploadConfigurationDeviceFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadConfigurationDeviceFile" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_UploadConfigurationDeviceFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadConfigurationDeviceFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_UploadConfigurationLogFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadConfigurationLogFile" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceManagementInterface_UploadConfigurationLogFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadConfigurationLogFileResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDeviceManagementInterface">
+    <wsdl:operation name="RestoreFactory">
+      <wsdl:input wsam:Action="http://iotwork.iotreader/commands/IDeviceService/RestoreFactory" message="tns:IDeviceManagementInterface_RestoreFactory_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotreader/commands/IDeviceService/RestoreFactoryResponse" message="tns:IDeviceManagementInterface_RestoreFactory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RestoreFactoryAndRestartDevice">
+      <wsdl:input wsam:Action="http://iotwork.iotreader/commands/IDeviceService/RestoreFactoryAndRestartDevice" message="tns:IDeviceManagementInterface_RestoreFactoryAndRestartDevice_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotreader/commands/IDeviceService/RestoreFactoryAndRestartDeviceResponse" message="tns:IDeviceManagementInterface_RestoreFactoryAndRestartDevice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RestartDevice">
+      <wsdl:input wsam:Action="http://iotwork.iotreader/commands/IDeviceService/RestartDevice" message="tns:IDeviceManagementInterface_RestartDevice_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotreader/commands/IDeviceService/RestartDeviceResponse" message="tns:IDeviceManagementInterface_RestartDevice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RestartApplication">
+      <wsdl:input wsam:Action="http://iotwork.iotreader/commands/IDeviceService/RestartApplication" message="tns:IDeviceManagementInterface_RestartApplication_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotreader/commands/IDeviceService/RestartApplicationResponse" message="tns:IDeviceManagementInterface_RestartApplication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StopAcquire">
+      <wsdl:input wsam:Action="http://iotwork.iotreader/commands/IDeviceService/StopAcquire" message="tns:IDeviceManagementInterface_StopAcquire_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotreader/commands/IDeviceService/StopAcquireResponse" message="tns:IDeviceManagementInterface_StopAcquire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RestartAcquire">
+      <wsdl:input wsam:Action="http://iotwork.iotreader/commands/IDeviceService/RestartAcquire" message="tns:IDeviceManagementInterface_RestartAcquire_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotreader/commands/IDeviceService/RestartAcquireResponse" message="tns:IDeviceManagementInterface_RestartAcquire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AskForStatistics">
+      <wsdl:input wsam:Action="http://iotwork.iotreader/commands/IQueryService/AskForStatistics" message="tns:IDeviceManagementInterface_AskForStatistics_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotreader/commands/IQueryService/AskForStatisticsResponse" message="tns:IDeviceManagementInterface_AskForStatistics_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AskForErrors">
+      <wsdl:input wsam:Action="http://iotwork.iotreader/commands/IQueryService/AskForErrors" message="tns:IDeviceManagementInterface_AskForErrors_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotreader/commands/IQueryService/AskForErrorsResponse" message="tns:IDeviceManagementInterface_AskForErrors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AskForAlive">
+      <wsdl:input wsam:Action="http://iotwork.iotreader/commands/IQueryService/AskForAlive" message="tns:IDeviceManagementInterface_AskForAlive_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotreader/commands/IQueryService/AskForAliveResponse" message="tns:IDeviceManagementInterface_AskForAlive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AskForUpTime">
+      <wsdl:input wsam:Action="http://iotwork.iotreader/commands/IQueryService/AskForUpTime" message="tns:IDeviceManagementInterface_AskForUpTime_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotreader/commands/IQueryService/AskForUpTimeResponse" message="tns:IDeviceManagementInterface_AskForUpTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListOfDllFilesForSensors">
+      <wsdl:input wsam:Action="http://iotwork.iotreader/commands/INavigationService/ListOfDllFilesForSensors" message="tns:IDeviceManagementInterface_ListOfDllFilesForSensors_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotreader/commands/INavigationService/ListOfDllFilesForSensorsResponse" message="tns:IDeviceManagementInterface_ListOfDllFilesForSensors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListOfDllFilesForPipes">
+      <wsdl:input wsam:Action="http://iotwork.iotreader/commands/INavigationService/ListOfDllFilesForPipes" message="tns:IDeviceManagementInterface_ListOfDllFilesForPipes_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotreader/commands/INavigationService/ListOfDllFilesForPipesResponse" message="tns:IDeviceManagementInterface_ListOfDllFilesForPipes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadRequestForDllFileForSensor">
+      <wsdl:input wsam:Action="http://iotwork.iotreader/commands/ITransferService/UploadRequestForDllFileForSensor" message="tns:IDeviceManagementInterface_UploadRequestForDllFileForSensor_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotreader/commands/ITransferService/UploadRequestForDllFileForSensorResponse" message="tns:IDeviceManagementInterface_UploadRequestForDllFileForSensor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadRequestForDllFileForPipe">
+      <wsdl:input wsam:Action="http://iotwork.iotreader/commands/ITransferService/UploadRequestForDllFileForPipe" message="tns:IDeviceManagementInterface_UploadRequestForDllFileForPipe_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotreader/commands/ITransferService/UploadRequestForDllFileForPipeResponse" message="tns:IDeviceManagementInterface_UploadRequestForDllFileForPipe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadConfigurationDeviceFile">
+      <wsdl:input wsam:Action="http://iotwork.iotreader/commands/ITransferService/UploadConfigurationDeviceFile" message="tns:IDeviceManagementInterface_UploadConfigurationDeviceFile_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotreader/commands/ITransferService/UploadConfigurationDeviceFileResponse" message="tns:IDeviceManagementInterface_UploadConfigurationDeviceFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadConfigurationLogFile">
+      <wsdl:input wsam:Action="http://iotwork.iotreader/commands/ITransferService/UploadConfigurationLogFile" message="tns:IDeviceManagementInterface_UploadConfigurationLogFile_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotreader/commands/ITransferService/UploadConfigurationLogFileResponse" message="tns:IDeviceManagementInterface_UploadConfigurationLogFile_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

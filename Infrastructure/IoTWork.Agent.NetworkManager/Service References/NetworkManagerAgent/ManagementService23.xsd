@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://iotwork.protocol/data" elementFormDefault="qualified" targetNamespace="http://iotwork.protocol/data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8088/ManagementService.svc?xsd=xsd7" namespace="http://iotwork.protocol/types" />
+  <xs:complexType name="Sample">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://iotwork.protocol/types" base="q1:Payload">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AAT" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DAT" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Sample" nillable="true" type="tns:Sample" />
+  <xs:complexType name="Measures">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://iotwork.protocol/types" base="q2:Payload">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DATS" nillable="true" type="tns:ArrayOfSample" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Measures" nillable="true" type="tns:Measures" />
+  <xs:complexType name="ArrayOfSample">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Sample" nillable="true" type="tns:Sample" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSample" nillable="true" type="tns:ArrayOfSample" />
+</xs:schema>

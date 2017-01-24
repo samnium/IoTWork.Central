@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://iotwork.iotpicker/commands" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://iotwork.iotpicker/commands" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://iotwork.iotpicker/commands/Imports">
+      <xsd:import schemaLocation="http://localhost:8089/ManagementService.svc?xsd=xsd0" namespace="http://iotwork.iotpicker/commands" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPickerManagementInterface_Stop_InputMessage">
+    <wsdl:part name="parameters" element="tns:Stop" />
+  </wsdl:message>
+  <wsdl:message name="IPickerManagementInterface_Stop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StopResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPickerManagementInterface_AskForStatistics_InputMessage">
+    <wsdl:part name="parameters" element="tns:AskForStatistics" />
+  </wsdl:message>
+  <wsdl:message name="IPickerManagementInterface_AskForStatistics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AskForStatisticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPickerManagementInterface_AskForErrors_InputMessage">
+    <wsdl:part name="parameters" element="tns:AskForErrors" />
+  </wsdl:message>
+  <wsdl:message name="IPickerManagementInterface_AskForErrors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AskForErrorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPickerManagementInterface_AskForAlive_InputMessage">
+    <wsdl:part name="parameters" element="tns:AskForAlive" />
+  </wsdl:message>
+  <wsdl:message name="IPickerManagementInterface_AskForAlive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AskForAliveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPickerManagementInterface_AskForUpTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:AskForUpTime" />
+  </wsdl:message>
+  <wsdl:message name="IPickerManagementInterface_AskForUpTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AskForUpTimeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPickerManagementInterface">
+    <wsdl:operation name="Stop">
+      <wsdl:input wsam:Action="http://iotwork.iotpicker/commands/IPickerService/Stop" message="tns:IPickerManagementInterface_Stop_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotpicker/commands/IPickerService/StopResponse" message="tns:IPickerManagementInterface_Stop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AskForStatistics">
+      <wsdl:input wsam:Action="http://iotwork.iotpicker/commands/IPickerQueryService/AskForStatistics" message="tns:IPickerManagementInterface_AskForStatistics_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotpicker/commands/IPickerQueryService/AskForStatisticsResponse" message="tns:IPickerManagementInterface_AskForStatistics_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AskForErrors">
+      <wsdl:input wsam:Action="http://iotwork.iotpicker/commands/IPickerQueryService/AskForErrors" message="tns:IPickerManagementInterface_AskForErrors_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotpicker/commands/IPickerQueryService/AskForErrorsResponse" message="tns:IPickerManagementInterface_AskForErrors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AskForAlive">
+      <wsdl:input wsam:Action="http://iotwork.iotpicker/commands/IPickerQueryService/AskForAlive" message="tns:IPickerManagementInterface_AskForAlive_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotpicker/commands/IPickerQueryService/AskForAliveResponse" message="tns:IPickerManagementInterface_AskForAlive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AskForUpTime">
+      <wsdl:input wsam:Action="http://iotwork.iotpicker/commands/IPickerQueryService/AskForUpTime" message="tns:IPickerManagementInterface_AskForUpTime_InputMessage" />
+      <wsdl:output wsam:Action="http://iotwork.iotpicker/commands/IPickerQueryService/AskForUpTimeResponse" message="tns:IPickerManagementInterface_AskForUpTime_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
