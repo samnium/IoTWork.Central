@@ -1,5 +1,0 @@
-/home/pi/git/IoTWork.Central/Contracts/IoTWork.Contracts/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/pi/git/IoTWork.Central/Contracts/IoTWork.Contracts/bin/Debug/IoTWork.Contracts.dll.mdb
-/home/pi/git/IoTWork.Central/Contracts/IoTWork.Contracts/bin/Debug/IoTWork.Contracts.dll
-/home/pi/git/IoTWork.Central/Contracts/IoTWork.Contracts/obj/Debug/IoTWork.Contracts.dll
-/home/pi/git/IoTWork.Central/Contracts/IoTWork.Contracts/obj/Debug/IoTWork.Contracts.dll.mdb
