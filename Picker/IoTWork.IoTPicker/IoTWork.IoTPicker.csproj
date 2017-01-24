@@ -62,8 +62,9 @@
     <Reference Include="IoTWork.Infrastructure">
       <HintPath>..\..\Drop\Infrastructure\IoTWork.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="IoTWork.Protocol">
-      <HintPath>..\..\Drop\Infrastructure\IoTWork.Protocol.dll</HintPath>
+    <Reference Include="IoTWork.Protocol, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Modules\IoTWork.Protocol.dll</HintPath>
     </Reference>
     <Reference Include="IoTWork.Queues">
       <HintPath>..\..\Drop\Infrastructure\IoTWork.Queues.dll</HintPath>

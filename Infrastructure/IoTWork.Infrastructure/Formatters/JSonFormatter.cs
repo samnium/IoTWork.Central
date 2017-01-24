@@ -41,7 +41,7 @@ namespace IoTWork.Infrastructure.Formatters
                     Assembly[] asmblies = AppDomain.CurrentDomain.GetAssemblies();
                     foreach (Assembly ass in asmblies)
                     {
-                        if (ass.FullName.Split(',')[0].Replace(".mono","") == toassname)
+                        if (ass.FullName.Split(',')[0] == toassname)
                         {
                             ttd = ass.GetType(typeName);
                             break;
