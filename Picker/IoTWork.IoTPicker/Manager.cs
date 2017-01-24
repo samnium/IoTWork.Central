@@ -244,7 +244,7 @@ namespace IoTWork.IoTPicker
                     {
                         try
                         {
-                            Assembly a = Assembly.LoadFrom(libraryname);
+                            Assembly a = Assembly.LoadFile(libraryname);
                         }
                         catch (Exception ex)
                         {

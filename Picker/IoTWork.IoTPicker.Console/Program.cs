@@ -26,13 +26,13 @@ namespace IoTWork.IoTPicker.Console
         [Option('d', "database", DefaultValue = false, HelpText = "Enable writing on database")]
         public bool EnableDatabaseWriting { get; set; }
 
-        [Option('a', "agent", DefaultValue = false, HelpText = "Enable custom agents for data manipulation")]
+        [Option('a', "agents", DefaultValue = false, HelpText = "Enable custom agents for data manipulation")]
         public bool EnableCustomAgents { get; set; }
 
         [Option('m', "management", DefaultValue = false, HelpText = "Enable custom agents for data manipulation")]
         public bool EnableManagementInterface { get; set; }
 
-        [Option('a', "address", DefaultValue = "", HelpText = "The base address of the management interface of the IoTPicker.")]
+        [Option('d', "address", DefaultValue = "", HelpText = "The base address of the management interface of the IoTPicker.")]
         public string ManagementAddress { get; set; }
 
         [HelpOption]

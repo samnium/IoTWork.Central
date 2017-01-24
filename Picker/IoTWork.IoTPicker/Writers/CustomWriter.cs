@@ -92,6 +92,7 @@ namespace IoTWork.IoTPicker.Writers
 
                             foreach (var s in samples)
                             {
+                                Assembly[] asmblies = AppDomain.CurrentDomain.GetAssemblies();
                                 _writer.Write(sentAt, DateTime.Now, (long)sequenceNumber, sourceAdrress,
                                     OrdinalForNetwork, OrdinalForRegion, OrdinalForRing, OrdinalForDevice, OrdinalForSensor,
                                     deviceUniqueAddress, s.data);

@@ -275,7 +275,7 @@ namespace IoTWork.IoTPicker.Management
                                 h.SequenceNumber,
                                 h.SourceAdrress,
                                 h.Region,
-                                h.DeviceUniqueAddress,
+                                h.SensorUniqueAddress,
                                 p
                                 );
                         }
