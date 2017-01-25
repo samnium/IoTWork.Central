@@ -41,8 +41,11 @@ namespace IoTWork.IoTPicker
         public void Initialize()
         {
             Plugins = new SortedDictionary<string, Assembly>();
-            foreach (var file in Directory.GetFiles(@"C:\iotserver\modules", "*.dll", SearchOption.TopDirectoryOnly))
+            foreach (var file in Directory.GetFiles(ConfigurationManager.AppSettings["Configuration_FilePath_Modules"], "*.dll", SearchOption.TopDirectoryOnly))
+            {
+                LogManager.Info(String.Format("PreLoading dll {0}", file));
                 Plugins.Add(AssemblyName.GetAssemblyName(file).FullName, Assembly.LoadFile(file));
+            }
 
             AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
         }
