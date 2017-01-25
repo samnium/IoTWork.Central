@@ -24,9 +24,38 @@ using IoTWork.Infrastructure.Helpers;
 using IoTWork.Infrastructure.Statistics;
 using IoTWork.Communication.Helpers;
 using IoTWork.Protocol.Devices;
+using System.IO;
 
 namespace IoTWork.IoTPicker
 {
+    [Serializable]
+    internal class CorePluginProvider
+    {
+        public CorePluginProvider()
+        {
+            Initialize();
+        }
+
+        public IDictionary<string, Assembly> Plugins { get; private set; }
+
+        public void Initialize()
+        {
+            Plugins = new SortedDictionary<string, Assembly>();
+            foreach (var file in Directory.GetFiles(@"C:\iotserver\modules", "*.dll", SearchOption.TopDirectoryOnly))
+                Plugins.Add(AssemblyName.GetAssemblyName(file).FullName, Assembly.LoadFile(file));
+
+            AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
+        }
+
+        private Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
+        {
+            if (!Plugins.ContainsKey(args.Name))
+                throw new InvalidOperationException(
+                      String.Format("Could not determine valid assembly in context for assembly name '{0}'.", args.Name));
+            return Plugins[args.Name];
+        }
+    }
+
     public class Manager
     {
         private Context _context;
@@ -236,29 +265,7 @@ namespace IoTWork.IoTPicker
             #endregion
 
             #region load custom dll into current  AppDomain
-            try
-            {
-                if (_context.configuration.classes != null)
-                {
-                    foreach (var libraryname in _context.configuration.classes.LibraryPath)
-                    {
-                        try
-                        {
-                            Assembly a = Assembly.LoadFile(libraryname);
-                        }
-                        catch (Exception ex)
-                        {
-                            LogManager.Error(libraryname + "::: " + ex.Message, ex);
-                        }
-                    }
-
-                    LogManager.Info("AppDomain reconfigured.");
-                }
-            }
-            catch (Exception ex)
-            {
-                LogManager.Error("Error in AppDomain reconfiguration: " + ex.Message, ex);
-            }
+            CorePluginProvider cpp = new CorePluginProvider();
             #endregion
 
             if (_context.configuration != null && _context.configuration.manager != null)
