@@ -25,104 +25,107 @@ namespace Pi.SHat.Writers
         {
             DbConnection dbconn = null;
 
-            var splitted = Parameter.Split(new string[] { "::::" }, StringSplitOptions.None);
-
-            string providername = splitted[0];
-            string connectionstring = splitted[1];
-            bool openit = Boolean.Parse(splitted[2]);
-
-            if (providername == "npgsql")
+            if (!String.IsNullOrEmpty(Parameter))
             {
-                NpgsqlConnection conn = new NpgsqlConnection(connectionstring);
+                var splitted = Parameter.Split(new string[] { "::::" }, StringSplitOptions.None);
 
-                if (openit)
-                    conn.Open();
+                string providername = splitted[0];
+                string connectionstring = splitted[1];
+                bool openit = Boolean.Parse(splitted[2]);
 
-                dbconn = conn;
-            }
+                if (providername == "npgsql")
+                {
+                    NpgsqlConnection conn = new NpgsqlConnection(connectionstring);
 
-            if (dbconn != null)
-            {
-                db = new PiSHatContext(dbconn);
+                    if (openit)
+                        conn.Open();
+
+                    dbconn = conn;
+                }
+
+                if (dbconn != null)
+                {
+                    db = new PiSHatContext(dbconn);
+                }
             }
         }
 
         public void Write(DateTime SentAt, DateTime ReadAt, long SequenceNumber, string SourceAdrress, int Network, int Region, int Ring, int Device, int Sensor, string DeviceUniqueAddress, IIoTSample Sample)
         {
-            if (db != null)
+            if (Sample.GetType().ToString() == typeof(PiSHatSample_Temperature).ToString())
             {
-                Console.WriteLine("....check for type {0}", Sample.GetType());
-                Console.WriteLine("....type 1 {0}", Sample.GetType().ToString() == typeof(PiSHatSample_Temperature).ToString());
-                Console.WriteLine("....type 2 {0}", Sample.GetType().ToString() == typeof(PiSHatSample_Pressure).ToString());
-                Console.WriteLine("....type 3 {0}", Sample.GetType().ToString() == typeof(PiSHatSample_Humidity).ToString());
+                Console.Write("....>>>>>> Writing PiSHatSample_Temperature");
 
-                if (Sample.GetType().ToString() == typeof(PiSHatSample_Temperature).ToString())
+                PiSHatData_Temperature data = new PiSHatData_Temperature();
+                data.SentOn = SentAt;
+                data.ReceivedOn = ReadAt;
+                data.SequenceNumber = SequenceNumber;
+                data.OrdinalForNetwork = Network;
+                data.OrdinalForRegion = Region;
+                data.OrdinalForRing = Ring;
+                data.OrdinalForDevice = Device;
+                data.OrdinalForChain = Sensor;
+                data.OrdinalForSensor = Sensor;
+                data.Value = ((PiSHatSample_Temperature)Sample).Value;
+
+                if (db != null)
                 {
-                    Console.Write("....>>>>>> Writing PiSHatSample_Temperature");
-
-                    PiSHatData_Temperature data = new PiSHatData_Temperature();
-                    data.SentOn = SentAt;
-                    data.ReceivedOn = ReadAt;
-                    data.SequenceNumber = SequenceNumber;
-                    data.OrdinalForNetwork = Network;
-                    data.OrdinalForRegion = Region;
-                    data.OrdinalForRing = Ring;
-                    data.OrdinalForDevice = Device;
-                    data.OrdinalForChain = Sensor;
-                    data.OrdinalForSensor = Sensor;
-                    data.Value = ((PiSHatSample_Temperature)Sample).Value;
-
                     db.Temperatures.Add(data);
                     db.SaveChanges();
-
-                    Console.WriteLine("<<<<<<.... SAVED");
+                    Console.WriteLine(" {0}<<<<<<.... SAVED", data.Value);
                 }
-                else if (Sample.GetType().ToString() == typeof(PiSHatSample_Pressure).ToString())
+
+                Console.WriteLine(" {0}<<<<<<.... DUMPED", data.Value);
+            }
+            else if (Sample.GetType().ToString() == typeof(PiSHatSample_Pressure).ToString())
+            {
+                Console.Write("....>>>>>> Writing PiSHatSample_Pressure");
+
+                PiSHatData_Pressure data = new PiSHatData_Pressure();
+                data.SentOn = SentAt;
+                data.ReceivedOn = ReadAt;
+                data.SequenceNumber = SequenceNumber;
+                data.OrdinalForNetwork = Network;
+                data.OrdinalForRegion = Region;
+                data.OrdinalForRing = Ring;
+                data.OrdinalForDevice = Device;
+                data.OrdinalForChain = Sensor;
+                data.OrdinalForSensor = Sensor;
+                data.Value = ((PiSHatSample_Pressure)Sample).Value;
+
+                if (db != null)
                 {
-                    Console.Write("....>>>>>> Writing PiSHatSample_Pressure");
-
-                    PiSHatData_Pressure data = new PiSHatData_Pressure();
-                    data.SentOn = SentAt;
-                    data.ReceivedOn = ReadAt;
-                    data.SequenceNumber = SequenceNumber;
-                    data.OrdinalForNetwork = Network;
-                    data.OrdinalForRegion = Region;
-                    data.OrdinalForRing = Ring;
-                    data.OrdinalForDevice = Device;
-                    data.OrdinalForChain = Sensor;
-                    data.OrdinalForSensor = Sensor;
-                    data.Value = ((PiSHatSample_Pressure)Sample).Value;
-
                     db.Pressures.Add(data);
                     db.SaveChanges();
-
-                    Console.WriteLine("<<<<<<.... SAVED");
+                    Console.WriteLine(" {0}<<<<<<.... SAVED", data.Value);
                 }
-                else if (Sample.GetType().ToString() == typeof(PiSHatSample_Humidity).ToString())
+
+                Console.WriteLine(" {0}<<<<<<.... DUMPED", data.Value);
+            }
+            else if (Sample.GetType().ToString() == typeof(PiSHatSample_Humidity).ToString())
+            {
+                Console.Write("....>>>>>> Writing PiSHatSample_Humidity");
+
+                PiSHatData_Humidity data = new PiSHatData_Humidity();
+                data.SentOn = SentAt;
+                data.ReceivedOn = ReadAt;
+                data.SequenceNumber = SequenceNumber;
+                data.OrdinalForNetwork = Network;
+                data.OrdinalForRegion = Region;
+                data.OrdinalForRing = Ring;
+                data.OrdinalForDevice = Device;
+                data.OrdinalForChain = Sensor;
+                data.OrdinalForSensor = Sensor;
+                data.Value = ((PiSHatSample_Humidity)Sample).Value;
+
+                if (db != null)
                 {
-                    Console.Write("....>>>>>> Writing PiSHatSample_Humidity");
-
-                    PiSHatData_Humidity data = new PiSHatData_Humidity();
-                    data.SentOn = SentAt;
-                    data.ReceivedOn = ReadAt;
-                    data.SequenceNumber = SequenceNumber;
-                    data.OrdinalForNetwork = Network;
-                    data.OrdinalForRegion = Region;
-                    data.OrdinalForRing = Ring;
-                    data.OrdinalForDevice = Device;
-                    data.OrdinalForChain = Sensor;
-                    data.OrdinalForSensor = Sensor;
-                    data.Value = ((PiSHatSample_Humidity)Sample).Value;
-
                     db.Humidities.Add(data);
                     db.SaveChanges();
-
-                    Console.WriteLine("<<<<<<.... SAVED");
+                    Console.WriteLine(" {0}<<<<<<.... SAVED", data.Value);
                 }
-            }
-            else
-            {
-                Console.WriteLine("<<<<<<.... DB is NULL");
+
+                Console.WriteLine(" {0}<<<<<<.... DUMPED", data.Value);
             }
         }
     }
