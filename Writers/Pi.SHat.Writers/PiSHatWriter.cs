@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Pi.SHat.Writers
 {
-    class PiSHatWriter: IIoTWriter
+    class PiSHatWriter : IIoTWriter
     {
         PiSHatContext db;
 
@@ -74,8 +74,8 @@ namespace Pi.SHat.Writers
                     db.SaveChanges();
                     Console.WriteLine(" {0}<<<<<<.... SAVED", data.Value);
                 }
-
-                Console.WriteLine(" {0}<<<<<<.... DUMPED", data.Value);
+                else
+                    Console.WriteLine(" {0}<<<<<<.... DUMPED", data.Value);
             }
             else if (Sample.GetType().ToString() == typeof(PiSHatSample_Pressure).ToString())
             {
@@ -99,8 +99,8 @@ namespace Pi.SHat.Writers
                     db.SaveChanges();
                     Console.WriteLine(" {0}<<<<<<.... SAVED", data.Value);
                 }
-
-                Console.WriteLine(" {0}<<<<<<.... DUMPED", data.Value);
+                else
+                    Console.WriteLine(" {0}<<<<<<.... DUMPED", data.Value);
             }
             else if (Sample.GetType().ToString() == typeof(PiSHatSample_Humidity).ToString())
             {
@@ -124,8 +124,8 @@ namespace Pi.SHat.Writers
                     db.SaveChanges();
                     Console.WriteLine(" {0}<<<<<<.... SAVED", data.Value);
                 }
-
-                Console.WriteLine(" {0}<<<<<<.... DUMPED", data.Value);
+                else
+                    Console.WriteLine(" {0}<<<<<<.... DUMPED", data.Value);
             }
         }
     }
